@@ -1,0 +1,53 @@
+---
+title: "Iris"
+author: "Rafael Lisboa - 345728 | Lucas - 345229 | Vinicius - 345477 | Frank - 344163"
+date: '2022-06-26'
+output: html_document
+---
+
+### **Importando as bibliotecas**
+
+```{r}
+library("ggplot2")
+```
+
+### **Importando a base de dados**
+
+```{r}
+iris <- read.csv("https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv")
+```
+
+# Conjunto de dados flor Iris
+
+*Origem: Wikipédia, a enciclopédia livre.*
+
+#### Diferenças entre flores de Íris
+
+> O conjunto de dados flor Iris ou conjunto de dados Iris de Fisher é um conjunto de dados multivariados introduzido pelo estatístico e biólogo britânico Ronald Fisher em seu artigo de 1936, O uso de múltiplas medições em problemas taxonômicos, como um exemplo de análise discriminante linear. Às vezes, é chamado de conjunto de dados da íris de Anderson porque Edgar Anderson coletou os dados para quantificar a variação morfológica das flores da íris de três espécies relacionadas. Duas das três espécies foram coletadas na Península de Gaspé, "todas do mesmo campo, colhidas no mesmo dia e medidas ao mesmo tempo pela mesma pessoa com a mesma aparelho". O conjunto de dados consiste em 50 amostras de cada uma das três espécies de Iris ( Iris setosa, Iris virginica e Iris versicolor). Quatro variáveis foram medidas em cada amostra: o comprimento e a largura das sépalas e pétalas, em centímetros. Com base na combinação dessas quatro características, Fisher desenvolveu um modelo discriminante linear para distinguir as espécies umas das outras.
+
+## Iris sépala comprimento por largura
+
+> #### *Plot do **comprimento da sépala** pela* **largura da sépala** de cada variedade de Iris
+
+```{r}
+ggplot(iris)+geom_point(mapping = aes(x =  sepal.length,
+                                      y = sepal.width,color=variety))
+```
+
+## Iris pétala comprimento por largura
+
+> #### *Plot do **comprimento da pétala** pela* **largura da pétala** *de cada variedade de Iris*
+
+```{r}
+ggplot(iris)+geom_point(mapping = aes(x =  petal.length,
+                                      y = petal.width,color=variety))
+```
+
+## Iris boxsplot
+
+> #### ***Boxsplot** de cada variedade de Iris*
+
+```{r}
+ggplot(iris)+geom_boxplot(mapping = aes(x = variety,
+                                        y = petal.width))
+```
